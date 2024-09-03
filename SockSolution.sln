@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{C780F675-32E4-488F-8A5D-87646CF005C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspireAppSock.AppHost", "AspireAppSock\AspireAppSock.AppHost\AspireAppSock.AppHost.csproj", "{7C297664-DE96-4216-B510-805EA51CAC1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireAppSock.AppHost", "AspireAppSock\AspireAppSock.AppHost\AspireAppSock.AppHost.csproj", "{7C297664-DE96-4216-B510-805EA51CAC1E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireAppSock.ServiceDefaults", "AspireAppSock\AspireAppSock.ServiceDefaults\AspireAppSock.ServiceDefaults.csproj", "{FC3889E4-D6E5-42F8-96C0-7DCDFB712523}"
 EndProject
@@ -14,6 +14,20 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireAppSock.Web", "AspireAppSock\AspireAppSock.Web\AspireAppSock.Web.csproj", "{8BBFC7C4-8674-44F0-90F2-C126087B3C50}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspireAppSock.Tests", "AspireAppSock\AspireAppSock.Tests\AspireAppSock.Tests.csproj", "{4E1E52FD-D9BD-43A9-AFDF-516CFDFF99CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker-compose", "docker-compose", "{C00C84E4-9C42-4D51-8D04-298E5E2D9906}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "opensearch", "opensearch", "{08ECF03C-E4C4-4E20-87EA-277082C23BAD}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose\opensearch\docker-compose.yml = docker-compose\opensearch\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSearchSock", "OpenSearchSock\OpenSearchSock.csproj", "{310C907C-2B32-41EC-AE87-E3111F29FABB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "elasticsearch", "elasticsearch", "{09547324-608A-4E71-93B0-1665B026C911}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose\elasticsearch\docker-compose.yml = docker-compose\elasticsearch\docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +55,10 @@ Global
 		{4E1E52FD-D9BD-43A9-AFDF-516CFDFF99CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E1E52FD-D9BD-43A9-AFDF-516CFDFF99CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E1E52FD-D9BD-43A9-AFDF-516CFDFF99CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310C907C-2B32-41EC-AE87-E3111F29FABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310C907C-2B32-41EC-AE87-E3111F29FABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310C907C-2B32-41EC-AE87-E3111F29FABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310C907C-2B32-41EC-AE87-E3111F29FABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +69,9 @@ Global
 		{2DB79F72-6861-4217-99D7-9D598EEFA707} = {C780F675-32E4-488F-8A5D-87646CF005C6}
 		{8BBFC7C4-8674-44F0-90F2-C126087B3C50} = {C780F675-32E4-488F-8A5D-87646CF005C6}
 		{4E1E52FD-D9BD-43A9-AFDF-516CFDFF99CA} = {C780F675-32E4-488F-8A5D-87646CF005C6}
+		{08ECF03C-E4C4-4E20-87EA-277082C23BAD} = {C00C84E4-9C42-4D51-8D04-298E5E2D9906}
+		{310C907C-2B32-41EC-AE87-E3111F29FABB} = {C780F675-32E4-488F-8A5D-87646CF005C6}
+		{09547324-608A-4E71-93B0-1665B026C911} = {C00C84E4-9C42-4D51-8D04-298E5E2D9906}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4962D850-0C8E-4FA1-ABA5-7B6900870FC7}

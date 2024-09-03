@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using System;
 using AspireAppSock.ApiService.Domain.Models;
+using AspireAppSock.ApiService.Infrastructure.Data.Configurations;
 
 namespace AspireAppSock.ApiService.Infrastructure.Data;
 
@@ -12,19 +11,32 @@ public class ApplicationDbContext : DbContext
         DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
-      
+
     }
 
-    public DbSet<Customer> CustomerLists => Set<Customer>();
+    public DbSet<Customer> CustomerLists
+    {
+        get; set;
+    }
+    //public DbSet<Order> OrderLists
+    //{
+    //    get; set;
+    //}
+    //public DbSet<OrderItem> OrderItemLists
+    //{
+    //    get; set;
+    //}
+    public DbSet<Product> ProductLists
+    {
+        get; set;
+    }
 
-    public DbSet<TodoItem> TodoItems => Set<TodoItem>();
-
-  
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
+        builder.ApplyConfiguration(new CustomerConfiguration());
+        builder.ApplyConfiguration(new ProductConfiguration());
+        //builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         base.OnModelCreating(builder);
     }
 }

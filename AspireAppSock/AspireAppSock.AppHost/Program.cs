@@ -9,4 +9,10 @@ builder.AddProject<Projects.AspireAppSock_Web>("webfrontend")
     .WithReference(cache)
     .WithReference(apiService);
 
+//builder.AddProject<Projects.AspireopensearchAppSock_ApiService>("aspireopensearchappsock-apiservice");
+
+builder.AddProject<Projects.OpenSearchSock>("opensearchsock");
+
+//builder.AddProject<Projects.AspireopensearchAppSock_ApiService>("aspireopensearchappsock-apiservice");
+
 builder.Build().Run();

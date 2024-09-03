@@ -2,6 +2,10 @@
 
 public record OrderItem
 {
+    public required long Id
+    {
+        get; init;
+    }
     public required long ProductId
     {
         get; init;

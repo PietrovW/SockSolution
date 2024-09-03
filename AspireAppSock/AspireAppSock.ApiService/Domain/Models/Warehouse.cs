@@ -20,7 +20,7 @@ public sealed record Warehouse
         var product = Products.FirstOrDefault(p => p.ProductId == productId);
         if (product != null)
         {
-            product.StockQuantity += quantity;
+            //product.StockQuantity += quantity;
         }
     }
 }

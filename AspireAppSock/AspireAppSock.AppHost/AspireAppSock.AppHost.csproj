@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\OpenSearchSock\OpenSearchSock.csproj" />
     <ProjectReference Include="..\AspireAppSock.ApiService\AspireAppSock.ApiService.csproj" />
     <ProjectReference Include="..\AspireAppSock.Web\AspireAppSock.Web.csproj" />
   </ItemGroup>

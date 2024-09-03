@@ -8,10 +8,11 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 {
     public void Configure(EntityTypeBuilder<Customer> builder)
     {
-        builder.Ignore(e => e.DomainEvents);
-
-        builder.Property(t => t.Title)
-            .HasMaxLength(200)
-            .IsRequired();
+        builder.HasKey(x => x.CustomerId);
+        builder.Property(x => x.FirstName).IsRequired();
+        builder.Property(x => x.LastName).IsRequired();
+        builder.Property(x => x.Email).IsRequired();
+        builder.Property(x => x.PhoneNumber).IsRequired();
+        builder.Property(x => x.Gender).IsRequired();
     }
 }

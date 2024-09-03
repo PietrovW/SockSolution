@@ -14,10 +14,7 @@ public sealed record Product
     {
         get; init;
     }
-    public required string Size
-    {
-        get; init;
-    }
+    
     public required string Color
     {
         get; init;
@@ -31,6 +28,11 @@ public sealed record Product
         get; init;
     }
     public required int StockQuantity
+    {
+        get; init;
+    }
+
+    public required string EAN
     {
         get; init;
     }

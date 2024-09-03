@@ -1,9 +1,9 @@
 ﻿namespace AspireAppSock.ApiService.Common.Interfaces;
 
-public interface IRepository<T>
+public interface IGenericRepository<T>
 {
     T GetById(long id);
-    IEnumerable<T> GetAll();
+    List<T> GetAll();
     void Add(T entity);
     void Update(T entity);
     void Delete(T entity); 

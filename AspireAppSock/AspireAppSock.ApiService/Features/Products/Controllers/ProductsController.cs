@@ -1,28 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using AspireAppSock.ApiService.Domain.Models;
+using AspireAppSock.ApiService.Common.Interfaces;
 namespace AspireAppSock.ApiService.Features.Products.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ProductsController : ControllerBase
+public class ProductsController(IProductRepository productRepository) : ControllerBase
 {
-    private readonly ProductRepository _productRepository;
-
-    public ProductsController(ProductRepository productRepository)
-    {
-        _productRepository = productRepository;
-    }
+    private readonly IProductRepository _productRepository = productRepository;
 
     [HttpGet]
     public ActionResult<List<Product>> GetProducts()
     {
-        return _productRepository.GetAllProducts();
+        return _productRepository.GetAll();
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Product> GetProduct(int id)
+    public ActionResult<Product> GetProduct(long id)
     {
-        var product = _productRepository.GetProductById(id);
+        var product = _productRepository.GetById(id);
         if (product == null)
         {
             return NotFound();
@@ -33,31 +29,34 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public ActionResult AddProduct(Product product)
     {
-        _productRepository.AddProduct(product);
+        _productRepository.Add(product);
         return Ok();
     }
 
     [HttpPut("{id}")]
     public ActionResult UpdateProduct(long id, Product product)
     {
-        var existingProduct = _productRepository.GetProductById(id);
+        var existingProduct = _productRepository.GetById(id);
         if (existingProduct == null)
         {
             return NotFound();
         }
-        _productRepository.UpdateProduct(product);
+        _productRepository.Update(product);
         return Ok();
     }
 
     [HttpDelete("{id}")]
     public ActionResult DeleteProduct(long id)
     {
-        var product = _productRepository.GetProductById(id);
+        var product = _productRepository.GetById(id);
         if (product == null)
         {
             return NotFound();
         }
-        _productRepository.DeleteProduct(id);
+        _productRepository.Delete(product);
         return Ok();
     }
 }
+
+
+

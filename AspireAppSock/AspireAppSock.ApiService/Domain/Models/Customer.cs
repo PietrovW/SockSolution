@@ -20,10 +20,16 @@ public record Customer
     }
     public required string PhoneNumber
     {
-        get; set;
+        get; init;
     }
-    public required List<Order> Orders
+    //public required List<Order> Orders
+    //{
+      //  get; init;
+    //}
+
+    public required Gender Gender
     {
         get; init;
     }
 }
+
